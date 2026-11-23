@@ -1,0 +1,2666 @@
+{
+  "https://github.com/jsonnet-libs/k8s": {
+    "name": "jsonnet-libs/k8s",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/umami-software/shiso": {
+    "name": "umami-software/shiso",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/omnirexflora-labs/OmniDaemon": {
+    "name": "omnirexflora-labs/OmniDaemon",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/mintlify/guides": {
+    "name": "mintlify/guides",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/trycompai/comp": {
+    "name": "trycompai/comp",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 115
+  },
+  "https://github.com/HelpCode-ai/anythingmcp": {
+    "name": "HelpCode-ai/anythingmcp",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/yc-oss/api": {
+    "name": "yc-oss/api",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/Laith0003/ux-skill": {
+    "name": "Laith0003/ux-skill",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 80
+  },
+  "https://github.com/kulterryan/who-to-bother-at-on-x": {
+    "name": "kulterryan/who-to-bother-at-on-x",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 80
+  },
+  "https://github.com/luongnv89/sleek-ui": {
+    "name": "luongnv89/sleek-ui",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 80
+  },
+  "https://github.com/Aniket-508/awesome-oss-perks": {
+    "name": "Aniket-508/awesome-oss-perks",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 80
+  },
+  "https://github.com/xuhongxu96/bazel-repos": {
+    "name": "xuhongxu96/bazel-repos",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/OWASP/masvs": {
+    "name": "OWASP/masvs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/6pac/SlickGrid": {
+    "name": "6pac/SlickGrid",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 50
+  },
+  "https://github.com/wx-chevalier/Awesome-Books-Notes": {
+    "name": "wx-chevalier/Awesome-Books-Notes",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/nextcloud/spreed": {
+    "name": "nextcloud/spreed",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 115
+  },
+  "https://github.com/dream-num/univer-workspace": {
+    "name": "dream-num/univer-workspace",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/mozilla/blurts-server": {
+    "name": "mozilla/blurts-server",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/clickvisual/clickvisual": {
+    "name": "clickvisual/clickvisual",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/ideal-postcodes/postcodes.io": {
+    "name": "ideal-postcodes/postcodes.io",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/openfoodfacts/openfoodfacts-server": {
+    "name": "openfoodfacts/openfoodfacts-server",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/shellhub-io/shellhub": {
+    "name": "shellhub-io/shellhub",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/entria/jobs": {
+    "name": "entria/jobs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/RoboVerseOrg/Simulately": {
+    "name": "RoboVerseOrg/Simulately",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/EliFuzz/awesome-system-prompts": {
+    "name": "EliFuzz/awesome-system-prompts",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/yytypescript/book": {
+    "name": "yytypescript/book",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/cardano-foundation/developer-portal": {
+    "name": "cardano-foundation/developer-portal",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/harryheman/my-js": {
+    "name": "harryheman/my-js",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 80
+  },
+  "https://github.com/opensrp/fhircore": {
+    "name": "opensrp/fhircore",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 130
+  },
+  "https://github.com/OpenRefine/openrefine.org": {
+    "name": "OpenRefine/openrefine.org",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 130
+  },
+  "https://github.com/IABTechLab/uid2docs": {
+    "name": "IABTechLab/uid2docs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/spicetify/docs": {
+    "name": "spicetify/docs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/thedataengineeringbook/thedataengineeringbook": {
+    "name": "thedataengineeringbook/thedataengineeringbook",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/CriticalFlaw/TF2HUD.Editor": {
+    "name": "CriticalFlaw/TF2HUD.Editor",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 80
+  },
+  "https://github.com/mozilla/ecosystem-platform": {
+    "name": "mozilla/ecosystem-platform",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/clearlydefined/clearlydefined": {
+    "name": "clearlydefined/clearlydefined",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/baomidou/mybatis-plus-doc": {
+    "name": "baomidou/mybatis-plus-doc",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/swagger-api/swagger.io-docs": {
+    "name": "swagger-api/swagger.io-docs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 115
+  },
+  "https://github.com/esphome/devices.esphome.io": {
+    "name": "esphome/devices.esphome.io",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/flemay/3musketeers": {
+    "name": "flemay/3musketeers",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/ratatui/ratatui-website": {
+    "name": "ratatui/ratatui-website",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/RoboStack/robostack.github.io": {
+    "name": "RoboStack/robostack.github.io",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/gin-gonic/website": {
+    "name": "gin-gonic/website",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/zosmaai/pi-llm-wiki": {
+    "name": "zosmaai/pi-llm-wiki",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/kurkle/chartjs-chart-matrix": {
+    "name": "kurkle/chartjs-chart-matrix",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/dotnetthailand/dotnetthailand.github.io": {
+    "name": "dotnetthailand/dotnetthailand.github.io",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/datosgobar/paquete-apertura-datos": {
+    "name": "datosgobar/paquete-apertura-datos",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/archivesspace/tech-docs": {
+    "name": "archivesspace/tech-docs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/spiffe/spiffe.io": {
+    "name": "spiffe/spiffe.io",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/go-kratos/go-kratos.dev": {
+    "name": "go-kratos/go-kratos.dev",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/npmstudy/indie-dev-with-ai": {
+    "name": "npmstudy/indie-dev-with-ai",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 80
+  },
+  "https://github.com/colinlet/PHP-Interview-QA": {
+    "name": "colinlet/PHP-Interview-QA",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 50
+  },
+  "https://github.com/dofy/learn-vim": {
+    "name": "dofy/learn-vim",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/chengpeiquan/learning-vue3": {
+    "name": "chengpeiquan/learning-vue3",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 80
+  },
+  "https://github.com/AniList/docs": {
+    "name": "AniList/docs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/hpcc-systems/hpcc-js-wasm": {
+    "name": "hpcc-systems/hpcc-js-wasm",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/knex/documentation": {
+    "name": "knex/documentation",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/rx-ts/vue": {
+    "name": "rx-ts/vue",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/nolebase/nolebase": {
+    "name": "nolebase/nolebase",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/airene/vitepress-blog-pure": {
+    "name": "airene/vitepress-blog-pure",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 80
+  },
+  "https://github.com/vuejs/v3-migration-guide": {
+    "name": "vuejs/v3-migration-guide",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/raspibolt/raspibolt": {
+    "name": "raspibolt/raspibolt",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/supabase/etl": {
+    "name": "supabase/etl",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://github.com/vercel/swr-site": {
+    "name": "vercel/swr-site",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/webdevcody/wdc-saas-starter-kit": {
+    "name": "webdevcody/wdc-saas-starter-kit",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 80
+  },
+  "https://github.com/irsyadadl/intentui": {
+    "name": "irsyadadl/intentui",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/kokonut-labs/kokonutui": {
+    "name": "kokonut-labs/kokonutui",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/sadmann7/diceui": {
+    "name": "sadmann7/diceui",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/oracle/node-oracledb": {
+    "name": "oracle/node-oracledb",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://github.com/MoyanZitto/keras-cn": {
+    "name": "MoyanZitto/keras-cn",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 50
+  },
+  "https://github.com/msteinbeck/tinyspline": {
+    "name": "msteinbeck/tinyspline",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/ucbrise/confluo": {
+    "name": "ucbrise/confluo",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/Byron/google-apis-rs": {
+    "name": "Byron/google-apis-rs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/burke-software/django-report-builder": {
+    "name": "burke-software/django-report-builder",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 130
+  },
+  "https://github.com/adalkiran/webrtc-nuts-and-bolts": {
+    "name": "adalkiran/webrtc-nuts-and-bolts",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/JupiterOne/security-policy-templates": {
+    "name": "JupiterOne/security-policy-templates",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/mr-ping/RabbitMQ_into_Chinese": {
+    "name": "mr-ping/RabbitMQ_into_Chinese",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/ebranca/owasp-pysec": {
+    "name": "ebranca/owasp-pysec",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/OranAi-Ltd/oransim": {
+    "name": "OranAi-Ltd/oransim",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 80
+  },
+  "https://github.com/superlinear-ai/substrate": {
+    "name": "superlinear-ai/substrate",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/toptal/granite": {
+    "name": "toptal/granite",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/mbailey/bash-my-aws": {
+    "name": "mbailey/bash-my-aws",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 80
+  },
+  "https://github.com/testng-team/testng": {
+    "name": "testng-team/testng",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/DataDog/dd-trace-rb": {
+    "name": "DataDog/dd-trace-rb",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 130
+  },
+  "https://github.com/netlify/cli": {
+    "name": "netlify/cli",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/plone/volto": {
+    "name": "plone/volto",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/aurae-runtime/aurae": {
+    "name": "aurae-runtime/aurae",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/pingcap/docs": {
+    "name": "pingcap/docs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/ifandelse/machina.js": {
+    "name": "ifandelse/machina.js",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/botswin/BotBrowser": {
+    "name": "botswin/BotBrowser",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/CoderGamester/mcp-unity": {
+    "name": "CoderGamester/mcp-unity",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 50
+  },
+  "https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api": {
+    "name": "oliver-zehentleitner/unicorn-binance-websocket-api",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/argdown/argdown": {
+    "name": "argdown/argdown",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/gogpu/ui": {
+    "name": "gogpu/ui",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/bioMate-AI/biomate-bioconductor-kb": {
+    "name": "bioMate-AI/biomate-bioconductor-kb",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 90
+  },
+  "https://github.com/JGRFW/comfyui-AICG3D": {
+    "name": "JGRFW/comfyui-AICG3D",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/renatoworks/3dsvg": {
+    "name": "renatoworks/3dsvg",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 80
+  },
+  "https://github.com/mnemox-ai/idea-reality-mcp": {
+    "name": "mnemox-ai/idea-reality-mcp",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/rubygems/guides": {
+    "name": "rubygems/guides",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/elonen/clapshot": {
+    "name": "elonen/clapshot",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 65
+  },
+  "https://github.com/yako-dev/flutter-settings-ui": {
+    "name": "yako-dev/flutter-settings-ui",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/alisaitteke/photoshop-mcp": {
+    "name": "alisaitteke/photoshop-mcp",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 80
+  },
+  "https://github.com/r3bl-org/r3bl-open-core": {
+    "name": "r3bl-org/r3bl-open-core",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 105
+  },
+  "https://github.com/sandydargoport/prism/issues/1308": {
+    "name": "sandydargoport/prism",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 50
+  },
+  "https://github.com/ChristopherVR/ooxml/issues/317": {
+    "name": "ChristopherVR/ooxml",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 50
+  },
+  "https://github.com/jsmestad/minga/issues/3966": {
+    "name": "jsmestad/minga",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 50
+  },
+  "https://github.com/AnayDhawan/openvidstudio/issues/182": {
+    "name": "AnayDhawan/openvidstudio",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 50
+  },
+  "https://rokan.computer/check": {
+    "name": "An in-browser checker for AI agent transcripts (nothing is upload",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 40
+  },
+  "https://github.com/immutlex-dev/minymaton": {
+    "name": "Minymaton \u2013 SQLite event based no polling token waste MCP message",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 40
+  },
+  "https://railcall.ai/": {
+    "name": "RailCall \u2013 Local Mac agent execution with zero API markup",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 60
+  },
+  "https://www.mcpfolio.com": {
+    "name": "MCPfolio \u2013 see which AI prompts recommend your MCP server",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 40
+  },
+  "https://www.librabots.com/": {
+    "name": "Libra Robotics",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.databuddy.cc": {
+    "name": "Databuddy",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.thecompany.company": {
+    "name": "The Company Company",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://lightanchor.ai": {
+    "name": "Light Anchor",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://ryhla.ai": {
+    "name": "Ryhla",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://claimkit.co/": {
+    "name": "ClaimKit",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://degla.ai": {
+    "name": "Degla Inc",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://reasonmachines.com": {
+    "name": "Reason Machines",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://usecollarai.com": {
+    "name": "Collar",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.rodeorobotics.com/": {
+    "name": "Rodeo Robotics",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.conus-med.com": {
+    "name": "CONUS",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.rightnowai.co": {
+    "name": "RightNow",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://evidentmachines.com/": {
+    "name": "Evident Machines",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://confetti.build": {
+    "name": "Confetti",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://alkera.ai": {
+    "name": "Alkera AI",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.usedefinite.com": {
+    "name": "Definite",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://heygradon.com/": {
+    "name": "Gradon",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.risklytics.com": {
+    "name": "Risklytics",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.liquidenergy.world": {
+    "name": "Liquid Energy",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://limnion.ai": {
+    "name": "Limnion",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://isoquant.ai/": {
+    "name": "isoquant",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://hillstar.ai": {
+    "name": "HillStar",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://vorflux.ai": {
+    "name": "Vorflux",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://grep.ai": {
+    "name": "Grep AI",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://metalcraft.ai": {
+    "name": "Metalcraft",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://ernd.ai/": {
+    "name": "ernd",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://simantic.com": {
+    "name": "Simantic",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://runtime.si/": {
+    "name": "Runtime",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://hue.run/": {
+    "name": "Hue",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://herdr.dev/": {
+    "name": "herdr",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.summerengine.com": {
+    "name": "Summer Engine",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://theo.site/": {
+    "name": "Theo",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://bayworks.app": {
+    "name": "Bayworks",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://sentient-os.ai": {
+    "name": "Sentient OS",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://simulithic.com": {
+    "name": "Simulithic",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://adalat.ai/": {
+    "name": "Adalat AI",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://veeza.ai": {
+    "name": "Veeza AI",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://petrichorbio.com/": {
+    "name": "Petrichor",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.reific.co/": {
+    "name": "Reific",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.toposlab.com": {
+    "name": "Topos",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.agent37.com/cloud": {
+    "name": "Agent 37",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://openscaffold.ai": {
+    "name": "OpenScaffold",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://faradaycompute.com": {
+    "name": "Faraday",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://se3labs.ai": {
+    "name": "SE3 Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://letter.dev": {
+    "name": "Letter",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.viraj-aero.com/": {
+    "name": "Viraj Aero",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.orgo.ai": {
+    "name": "Orgo",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://boat.dev": {
+    "name": "Boat",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://appliedkinetics.ai": {
+    "name": "Applied Kinetics",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://ample.computer/": {
+    "name": "Ample Computer",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://biomes.co/": {
+    "name": "Biomes",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://aviern.com/": {
+    "name": "Aviern",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.useforward.co/": {
+    "name": "Forward",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://stacktrace.ai": {
+    "name": "Stacktrace",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.altair-health.com": {
+    "name": "Altair Health",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://armorerlabs.com": {
+    "name": "Armorer Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.talos-us.com/": {
+    "name": "Talos",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://lantern.md": {
+    "name": "Lantern AI",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://munito.ai": {
+    "name": "Munito AI",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://openlakehq.com": {
+    "name": "OpenLake Technologies",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.mirrors.dev": {
+    "name": "Mirrors",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://getopencrawl.com": {
+    "name": "OpenCrawl",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.perceptuallabs.com/": {
+    "name": "Perceptual Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://meetriver.com/": {
+    "name": "River",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://withhopper.com/code": {
+    "name": "Hopper",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://byteask.ai/": {
+    "name": "ByteAsk",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.elimentary.com": {
+    "name": "Elimentary",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://agentrelay.com": {
+    "name": "Agent Relay",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.myhelios.com/": {
+    "name": "Helios Intelligence",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.invertix.ai": {
+    "name": "Invertix",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://ravenphone.com": {
+    "name": "Raven",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://dydema.com/": {
+    "name": "Dydema",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.plek.ai/": {
+    "name": "Plek AI",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://research.repovive.com": {
+    "name": "Repovive",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://workers.io": {
+    "name": "Workers IO",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.quivly.ai/": {
+    "name": "Quivly AI",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://ordolabs.ai/": {
+    "name": "Ordo Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://runpraxis.ai": {
+    "name": "Praxis",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://shepherdrobotics.ai/": {
+    "name": "Shepherd Robotics",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://evardi.ai/": {
+    "name": "Evardi",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.oroagents.com": {
+    "name": "ORO AI",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://twentyfour26.com/": {
+    "name": "twentyfour26",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://hyperbench.ai/": {
+    "name": "HyperBench",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://usefleety.com": {
+    "name": "Fleety",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://0.security": {
+    "name": "0.security",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://ploverlabs.ai/": {
+    "name": "Plover Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://ploid.com": {
+    "name": "Ploid",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://primordiant.com": {
+    "name": "Primordiant",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://rystic.ai": {
+    "name": "Rystic",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://vorelios.com": {
+    "name": "Vorelios",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://dreamscalelabs.com": {
+    "name": "Dreamscale Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://verno-ai.com": {
+    "name": "Verno",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://resintechnologies.com/": {
+    "name": "Resin Technologies",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://routant.ai/": {
+    "name": "Routant",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://telamont.com": {
+    "name": "Telamont",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.ignitionbenefits.com/": {
+    "name": "Ignition Benefits",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.pomerado.ai": {
+    "name": "Pomerado",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.archgen.tech/": {
+    "name": "Archgen Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://polemosindustries.com/": {
+    "name": "Polemos Industries",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://organizely.io/": {
+    "name": "Organizely",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://gethesperai.com": {
+    "name": "Hesper AI",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://everyapp.com": {
+    "name": "EveryApp",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://reconero.com": {
+    "name": "Reconero",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://ailitrail.com/": {
+    "name": "Ailit",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://native.no/": {
+    "name": "Native",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "http://runlatent.ai/": {
+    "name": "Latent",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.antimattr.one/project-mnemosyne": {
+    "name": "antimattr",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://usevyra.com": {
+    "name": "Vyra",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://preload.ai": {
+    "name": "Preload",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://constor.ai": {
+    "name": "Constor",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://graphide.com": {
+    "name": "Graphide",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://dualizer.com": {
+    "name": "Dualizer",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://operatechnologies.com": {
+    "name": "OpEra",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://papaya.fyi/": {
+    "name": "Papaya",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://obsessiondb.com": {
+    "name": "ObsessionDB",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://uxduck.com": {
+    "name": "UXDuck",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://sona8.com": {
+    "name": "Sona8",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://indexlaw.com": {
+    "name": "Index Law",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://versine.com?utm_source=ycombinator": {
+    "name": "Versine",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.melty.gg": {
+    "name": "Melty",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://routerplus.com": {
+    "name": "RouterPlus",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://composal.com": {
+    "name": "Composal",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.epsilab.com": {
+    "name": "Epsilab",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://verdun.ai": {
+    "name": "Verdun",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://caveman.so": {
+    "name": "Caveman",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://acyclic.dev": {
+    "name": "Acyclic Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.axiomat.com": {
+    "name": "Axiomat",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://tilion.com": {
+    "name": "Tilion",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://blinka.co": {
+    "name": "Blinka",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://rezora.io/": {
+    "name": "Rezora IO",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.volaren.ai": {
+    "name": "Volaren",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://elithia.com": {
+    "name": "Elithia",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.useterse.ai/": {
+    "name": "Terse",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://usefr.com/": {
+    "name": "Frontrunner",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://decent.com": {
+    "name": "Decent",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://graypass.com/": {
+    "name": "GrayPass",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://cyclon.ai/": {
+    "name": "Cyclon",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://ageospatial.com/": {
+    "name": "Ageospatial",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://theagenticdatacompany.com": {
+    "name": "The Agentic Data Co.",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://foreshadow-industries.ai/": {
+    "name": "Foreshadow Industries",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://biodelivera.ai/": {
+    "name": "BioDelivera",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.redoubt.insure": {
+    "name": "Redoubt Insurance",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://larkagents.com": {
+    "name": "Lark",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://superserve.ai": {
+    "name": "Superserve",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://contourholdings.ai/": {
+    "name": "Contour",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://hellotrepo.com/": {
+    "name": "Trepo",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://ninesrobotics.ai/": {
+    "name": "Nines",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://tilo.so": {
+    "name": "Tilo",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://withkiwi.ai/": {
+    "name": "Kiwi",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://openhack.com": {
+    "name": "OpenHack",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.aucert.ai/": {
+    "name": "Aucert",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://mnemoniclabs.ai/": {
+    "name": "Mnemonic Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://sintropix.com/": {
+    "name": "Sintropix",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://phone-harness.com/": {
+    "name": "Phone Harness",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.prototypes.fun/": {
+    "name": "Proto",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://maritime.sh/": {
+    "name": "Maritime",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.deepmark.me": {
+    "name": "DeepMark",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://flashdrive.ai": {
+    "name": "FlashDrive",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://boxes.dev": {
+    "name": "Boxes.dev",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.mantlemachines.com/": {
+    "name": "Mantle Machines",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://cesara.com": {
+    "name": "Cesara",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.aikidotechnologies.com": {
+    "name": "Aikido Technologies",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://spacesheep.dev/": {
+    "name": "Spacesheep",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://championeffect.com": {
+    "name": "ChampionEffect Inc.",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.gatherhq.com": {
+    "name": "GatherHQ",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://baudlabs.ai": {
+    "name": "Baud",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://withasync.com": {
+    "name": "Async",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://inductionlabs.com": {
+    "name": "Induction Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://os3robotics.com/": {
+    "name": "OS3",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.evergrovelabs.com/": {
+    "name": "Evergrove",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://frontier.site": {
+    "name": "Frontier Computing",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.waddlelabs.ai/": {
+    "name": "Waddle Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://onetriangle.ai/": {
+    "name": "OneTriangle",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://rapidfolio.com/": {
+    "name": "Rapidfolio",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.assemble.ai/": {
+    "name": "Assemble",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.archal.ai/": {
+    "name": "Archal",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.datoric.com": {
+    "name": "Datoric",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.atlia.com": {
+    "name": "Atlia",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.pingdream.com/": {
+    "name": "Dream",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://tsenta.com": {
+    "name": "Tsenta",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://cova.care/": {
+    "name": "Cova",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://pothlabs.com": {
+    "name": "Poth Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://dipolelabs.com/": {
+    "name": "Dipole Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://openvector.com": {
+    "name": "OpenVector",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://litmushiring.com/": {
+    "name": "Litmus",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.illumelabs.ai": {
+    "name": "Illume Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://mostrobotic.com/": {
+    "name": "Most Robotic",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://osmaura.com": {
+    "name": "Osmaura",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://palettelabs.com/": {
+    "name": "Palette",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://onmarker.com": {
+    "name": "Marker",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://mentlio.com": {
+    "name": "Mentlio",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://tridentsecurity.io/": {
+    "name": "Trident",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://rekursiv.ai": {
+    "name": "rekursiv.ai",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.agentmuxer.com": {
+    "name": "Amorphic Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.propriorobotics.com/": {
+    "name": "Proprio Robotics",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://maxxwell.dev": {
+    "name": "Rindler",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://git.cafe": {
+    "name": "GitCafe",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://kebra.com": {
+    "name": "Kebra",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.usetorus.com": {
+    "name": "Torus",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://pango.ai/": {
+    "name": "Pango",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://hoplite.sh": {
+    "name": "Hoplite",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://moonshot.computer/": {
+    "name": "Moonshot",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://donkey.trade": {
+    "name": "Donkey",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://erinys.ai": {
+    "name": "Erinys",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://orikata.ai": {
+    "name": "Orikata Bio PBC",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://perceptronml.com": {
+    "name": "Perceptron ML",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://olamlabs.ai": {
+    "name": "Olam Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.shieldedglobal.com/": {
+    "name": "Shielded",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://parasma.com": {
+    "name": "Parasma",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://trope.ai": {
+    "name": "Trope",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://palisade.run": {
+    "name": "Palisade",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://nebusec.ai": {
+    "name": "NebuSec",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://zommalabs.com": {
+    "name": "Zomma",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.rex.inc": {
+    "name": "Rex",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://enact.company": {
+    "name": "Enact",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.maingen.com/": {
+    "name": "Maingen",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://musicarena.io/": {
+    "name": "MusicArena",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://bernardhq.com/": {
+    "name": "Bernard",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://trystudio.ai": {
+    "name": "Studio",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://prized.dev": {
+    "name": "Prized",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://orchestra.ai/": {
+    "name": "Orchestra",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://synapsesemi.org": {
+    "name": "Synapse Semiconductor",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://speko.com": {
+    "name": "Speko",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.lemonlime.com/": {
+    "name": "LemonLime",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://jcode.sh/": {
+    "name": "Jcode",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.insurf.io": {
+    "name": "Insurf",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.impact-drones.com": {
+    "name": "IMPACT Drones",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.verdantapp.com/": {
+    "name": "Verdant",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://generalcontextlabs.com": {
+    "name": "General Context Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.guildai.co": {
+    "name": "GUILD",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://realpact.ai": {
+    "name": "RealPact",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://riften.ai": {
+    "name": "Riften",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://bizmark.ai": {
+    "name": "Bizmark",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://mosaic.inc": {
+    "name": "Mosaic",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://duetmachines.com": {
+    "name": "Duet Machines",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.alloovium.com/en": {
+    "name": "Alloovium",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.mochi.tv/": {
+    "name": "Mochi",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "http://www.deepreach.ai": {
+    "name": "DeepReach Inc.",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.getcoach.com/": {
+    "name": "COACH",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://grocalo.com/": {
+    "name": "Grocalo",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://audun.co": {
+    "name": "Audun",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://joinmarble.ai/": {
+    "name": "Marble",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.stoaexchange.com": {
+    "name": "Stoa",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.tryglen.com/": {
+    "name": "Glen",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://context.dev": {
+    "name": "Context.dev",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://codag.ai/": {
+    "name": "Codag",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.exosat.com": {
+    "name": "Exosat",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://touchmark.ai": {
+    "name": "Touchmark",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://prodigy.markets": {
+    "name": "Prodigy Research",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://zaplar.com": {
+    "name": "Zaplar",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://screenpipe.com": {
+    "name": "screenpipe",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.rasyn.ai/": {
+    "name": "Rasyn",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://callbook.ai": {
+    "name": "Callbook AI",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.traceforce.ai": {
+    "name": "Traceforce",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://standardmachines.com": {
+    "name": "Standard Machines",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://agencytool.com": {
+    "name": "Agency Tool Company",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://snowstone.ai": {
+    "name": "Snowstone",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://elitehq.ai/": {
+    "name": "Elite",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://talentpluto.com": {
+    "name": "Pluto",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://machine0.io": {
+    "name": "machine0",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://bloomylearning.com/": {
+    "name": "Bloomy",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://ooakdata.com/": {
+    "name": "Ooak Data",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://graphify.com/": {
+    "name": "Graphify Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://hilstart.io/": {
+    "name": "Hilstart",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://usealmanac.com": {
+    "name": "Almanac",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://whitespacehq.ai/": {
+    "name": "Whitespace",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.useclick.ai": {
+    "name": "Click",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://akonlabs.com": {
+    "name": "Akon Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://rational.to": {
+    "name": "Rational",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://omanta.com/": {
+    "name": "Omanta",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://fabraix.com": {
+    "name": "Fabraix",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.getqlo.com/": {
+    "name": "Qlo",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://heytenor.com/": {
+    "name": "Tenor",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.daqstra.com": {
+    "name": "Daqstra",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.latolabs.io/": {
+    "name": "LATO",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.neuromorphic.vision/": {
+    "name": "Neuromorphic",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.arbital.xyz": {
+    "name": "Arbital",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://movingatoms.ai/": {
+    "name": "Moving Atoms",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://ekholabs.com/": {
+    "name": "Ekho Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "http://isengardindustries.com/": {
+    "name": "Isengard Industries Inc",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://denta.com": {
+    "name": "Denta",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://getcomputable.com": {
+    "name": "Computable",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://financialdatasets.ai/": {
+    "name": "Financial Datasets",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://lucaiq.com/": {
+    "name": "Luca IQ",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://pacificmachines.com": {
+    "name": "Pacific",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://bear.inc/": {
+    "name": "Bear",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://executor.sh": {
+    "name": "Executor",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.waybill.to/": {
+    "name": "Waybill",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://marengox.com": {
+    "name": "Marengo",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://lumeria.com": {
+    "name": "Lumeria",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.markovstudios.com/": {
+    "name": "Markov",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://inkbox.ai": {
+    "name": "Inkbox",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://gamgee.io/": {
+    "name": "Gamgee",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://agnost.ai": {
+    "name": "Agnost AI",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://axelrodlabs.com/": {
+    "name": "Axelrod",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.trycarsignal.com": {
+    "name": "CarSignal",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://decawork.ai/": {
+    "name": "Decawork",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.getpennant.ai": {
+    "name": "Pennant",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://usetokenless.com": {
+    "name": "Tokenless",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.mireye.com/": {
+    "name": "Mireye",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "http://lamb-labs.com": {
+    "name": "Lamb Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://83sciences.ai": {
+    "name": "83 Sciences",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://palisade-ai.com/": {
+    "name": "Palisade",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://skymerse.com": {
+    "name": "Skymerse",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://hyperprobe.co": {
+    "name": "HyperProbe",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://toven.ai": {
+    "name": "TovenAI",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://verdictmachine.com": {
+    "name": "Verdict Machine",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://trydock.ai": {
+    "name": "Dock",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.openrelay.inc": {
+    "name": "OpenRelay",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://princeps.dev": {
+    "name": "PRINCEPS",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://hebbianrobotics.com/": {
+    "name": "Hebbian Robotics",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://florin.inc": {
+    "name": "Florin",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://locke.inc": {
+    "name": "Locke",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://petrarch.co/": {
+    "name": "Petrarch",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://subvysion.com": {
+    "name": "SubVysion",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://tracerml.ai": {
+    "name": "Tracer",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://wondering.app": {
+    "name": "Wondering",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://onecli.sh": {
+    "name": "OneCLI",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.dawnxr.com": {
+    "name": "Dawn Industries",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://cuebench.dev": {
+    "name": "CueBench",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://autoresearch.inc": {
+    "name": "Autoresearch, Inc.",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://robocurve.org": {
+    "name": "Robocurve",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://allia.health/": {
+    "name": "Allia Health",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://osseus.ai/": {
+    "name": "Osseus",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://hardwareintelligence.ai": {
+    "name": "hardware intelligence",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://thebillow.ai/": {
+    "name": "Billow AI Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://magmahq.ai": {
+    "name": "Magma",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://caution.co": {
+    "name": "Caution",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "http://coarena.ai": {
+    "name": "CoArena",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://edviroenergy.com": {
+    "name": "Edviro",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://experientiallabs.ai": {
+    "name": "Experiential Labs",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 75
+  },
+  "https://www.conifer.build": {
+    "name": "Conifer",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  },
+  "https://www.tryopentag.com/": {
+    "name": "OpenTag",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "last_score": 45
+  }
+}

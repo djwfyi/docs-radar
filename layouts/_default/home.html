@@ -5,54 +5,153 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ .Site.Title }}</title>
   <style>
-    body { font-family: system-ui, -apple-system, sans-serif; max-width: 1100px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; line-height: 1.5; }
-    header { border-bottom: 2px solid #eaeaea; padding-bottom: 1rem; margin-bottom: 2rem; }
-    .meta { color: #666; font-size: 0.9rem; }
-    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    body { font-family: system-ui, -apple-system, sans-serif; max-width: 1220px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; line-height: 1.5; }
+    header { border-bottom: 2px solid #eaeaea; padding-bottom: 1rem; margin-bottom: 1.5rem; }
+    .meta { color: #666; font-size: 0.9rem; margin-bottom: 0; }
+    .scoring-guide { margin-top: 0.65rem; font-size: 0.85rem; color: #4b5563; }
+    .scoring-guide summary { cursor: pointer; font-weight: 500; color: #2563eb; display: inline-block; user-select: none; }
+    .scoring-guide summary:hover { text-decoration: underline; }
+    .scoring-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.6rem; margin-top: 0.65rem; padding: 0.75rem; background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 6px; }
+    .scoring-item { font-size: 0.82rem; line-height: 1.4; }
+    .scoring-item strong { color: #111827; }
+    .controls { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+    .filter-group { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .right-controls { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+    .filter-btn { border: 1px solid #d1d5db; background: #fff; color: #374151; padding: 0.4rem 0.75rem; border-radius: 6px; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.15s ease; }
+    .filter-btn:hover { background: #f3f4f6; }
+    .filter-btn.active { background: #1e293b; color: #fff; border-color: #1e293b; }
+    .platform-select, .search-box { padding: 0.45rem 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.85rem; background: #fff; color: #1a1a1a; }
+    .search-box { min-width: 220px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
     th, td { text-align: left; padding: 0.75rem; border-bottom: 1px solid #eaeaea; vertical-align: top; }
-    th { background: #f8f9fa; font-weight: 600; }
-    .badge { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; background: #eef2ff; color: #3730a3; margin-right: 0.25rem; }
-    .score { font-weight: 700; color: #059669; }
+    th { background: #f8f9fa; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; color: #4b5563; }
+    .badge { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; background: #eef2ff; color: #3730a3; margin-bottom: 0.25rem; }
+    .badge-new { background: #dcfce7; color: #166534; }
+    .badge-delta { background: #fef3c7; color: #92400e; }
+    .badge-platform { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+    .badge-greenfield { background: #fffbeb; color: #92400e; border: 1px solid #fde68a; }
+    .score { font-weight: 700; color: #059669; font-size: 1.05rem; border-bottom: 1px dotted #9ca3af; cursor: help; }
+    .first-seen { display: block; font-size: 0.75rem; color: #6b7280; margin-top: 0.2rem; }
     a { color: #2563eb; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    .hidden { display: none; }
   </style>
 </head>
 <body>
   <header>
     <h1>{{ .Site.Title }}</h1>
     {{ with .Site.Data.signals }}
-      <p class="meta">Last updated: <strong>{{ .updated_at }}</strong> • Tracking {{ len .leads }} signals</p>
+      <p class="meta">
+        Last updated: <strong>{{ .updated_at }}</strong> •
+        Tracking <strong id="visible-count">{{ len .leads }}</strong> of {{ len .leads }} signals
+        ({{ .new_count | default 0 }} new this run)
+      </p>
     {{ end }}
+    <details class="scoring-guide">
+      <summary>How scores are calculated</summary>
+      <div class="scoring-grid">
+        <div class="scoring-item"><strong>95–110 · Core Docs Config:</strong> Repo recently added Mintlify, Docusaurus, Astro/Starlight, VitePress, Fumadocs, MkDocs, Hugo, or Antora (+10 custom domain, +5 early traction 25–2.5k★).</div>
+        <div class="scoring-item"><strong>90–100 · Open Docs / Drift Issue:</strong> Active GitHub issue requesting missing docs or flagging doc drift (+5 custom domain, +5 live docs site).</div>
+        <div class="scoring-item"><strong>85–90 · Show HN (Live Docs):</strong> Recent developer-tool launch on HN with an active docs subdomain or <code>/docs</code> route (+5 if ≥75 HN pts).</div>
+        <div class="scoring-item"><strong>75 · YC Batch (Active Docs):</strong> Recent YC company (W24–S26) with a confirmed docs subdomain or <code>/docs</code> endpoint.</div>
+        <div class="scoring-item"><strong>65–80 · AI / Linter Config:</strong> Repo added <code>llms.txt</code> or <code>.vale.ini</code> (+10 domain, +5 traction).</div>
+        <div class="scoring-item"><strong>35–60 · Greenfield / Early:</strong> Show HN launch without docs yet (60) or recent YC startup with no docs detected (35). Hover any score for its exact breakdown.</div>
+      </div>
+    </details>
   </header>
 
   <main>
     {{ with .Site.Data.signals.leads }}
-    <table>
+    <div class="controls">
+      <div class="filter-group" id="filter-buttons">
+        <button class="filter-btn active" data-filter="ALL">All Signals</button>
+        <button class="filter-btn" data-filter="NEW">New This Run</button>
+        <button class="filter-btn" data-filter="DOCS_CONFIG_ADDED">Docs Configs</button>
+        <button class="filter-btn" data-filter="DOC_ISSUE_OPEN">Open Issues</button>
+        <button class="filter-btn" data-filter="YC_BATCH">YC Batch</button>
+        <button class="filter-btn" data-filter="SHOW_HN_DEVTOOL">Show HN</button>
+        <button class="filter-btn" data-filter="REDDIT_MENTION">Reddit</button>
+      </div>
+      <div class="right-controls">
+        <select id="platform-filter" class="platform-select" aria-label="Filter by docs platform">
+          <option value="ALL">All Docs Platforms</option>
+        </select>
+        <input type="text" id="search-input" class="search-box" placeholder="Filter by keyword, platform, repo...">
+      </div>
+    </div>
+
+    <table id="signals-table">
       <thead>
         <tr>
-          <th>Score</th>
-          <th>Target / Project</th>
-          <th>Signal Type</th>
+          <th style="width: 75px;">Score</th>
+          <th style="width: 240px;">Target / Project</th>
+          <th style="width: 155px;">Docs Platform</th>
+          <th style="width: 175px;">Signal</th>
           <th>Context & Details</th>
         </tr>
       </thead>
       <tbody>
         {{ range . }}
-        <tr>
-          <td class="score">{{ .score }}</td>
+        {{ $plat := .platform | default "Greenfield / None" }}
+        <tr class="signal-row"
+            data-type="{{ .signal_type }}"
+            data-platform="{{ $plat }}"
+            data-new="{{ if .is_new }}true{{ else }}false{{ end }}"
+            data-search="{{ lower .name }} {{ lower .domain }} {{ lower $plat }} {{ lower .detail }} {{ lower .signal_type }}">
+          <td>
+            <span class="score" title="{{ .score_breakdown | default "Base signal score" }}">{{ .score }}</span>
+            {{ if gt (.score_delta | default 0) 0 }}
+              <span class="badge badge-delta">+{{ .score_delta }}</span>
+            {{ end }}
+          </td>
           <td>
             <strong><a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a></strong>
             {{ if .domain }}<br><small>{{ .domain }}</small>{{ end }}
+            {{ if .first_seen }}<span class="first-seen">First seen: {{ .first_seen }}</span>{{ end }}
           </td>
-          <td><span class="badge">{{ .signal_type }}</span></td>
+          <td>
+            {{ if eq $plat "Greenfield / None" }}
+              <span class="badge badge-greenfield">{{ $plat }}</span>
+            {{ else }}
+              <span class="badge badge-platform">{{ $plat }}</span>
+            {{ end }}
+          </td>
+          <td>
+            {{ if .is_new }}<span class="badge badge-new">NEW</span><br>{{ end }}
+            <span class="badge">{{ .signal_type }}</span>
+          </td>
           <td>{{ .detail }}</td>
         </tr>
         {{ end }}
       </tbody>
     </table>
     {{ else }}
-      <p>No signals ingested yet. Run the scanner script to populate <code>data/signals.json</code>.</p>
+      <p>No signals ingested yet. Run <code>python scripts/fetch_signals.py</code> to populate <code>data/signals.json</code>.</p>
     {{ end }}
   </main>
-</body>
-</html>
+
+  <script>
+    (function () {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const platformSelect = document.getElementById('platform-filter');
+      const searchInput = document.getElementById('search-input');
+      const rows = document.querySelectorAll('.signal-row');
+      const countEl = document.getElementById('visible-count');
+      let activeFilter = 'ALL';
+
+      if (platformSelect) {
+        const counts = new Map();
+        rows.forEach((row) => {
+          const plat = row.dataset.platform || 'Greenfield / None';
+          counts.set(plat, (counts.get(plat) || 0) + 1);
+        });
+
+        Array.from(counts.keys())
+          .sort((a, b) => a.localeCompare(b))
+          .forEach((plat) => {
+            const opt = document.createElement('option');
+            opt.value = plat;
+            opt.textContent = `${plat} (${counts.get(plat)})`;
+            platformSelect.appendChild(opt);
+          });
+      }
