@@ -1,0 +1,7 @@
+baseURL = "https://djwfyi.github.io/docs-radar/"
+locale = "en-us"
+title = "Early-Stage Docs Radar"
+
+[caches]
+  [caches.images]
+    dir = ":cacheDir/images"

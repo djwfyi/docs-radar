@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Site.Title }}</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; max-width: 1100px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; line-height: 1.5; }
+    header { border-bottom: 2px solid #eaeaea; padding-bottom: 1rem; margin-bottom: 2rem; }
+    .meta { color: #666; font-size: 0.9rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { text-align: left; padding: 0.75rem; border-bottom: 1px solid #eaeaea; vertical-align: top; }
+    th { background: #f8f9fa; font-weight: 600; }
+    .badge { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; background: #eef2ff; color: #3730a3; margin-right: 0.25rem; }
+    .score { font-weight: 700; color: #059669; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{{ .Site.Title }}</h1>
+    {{ with .Site.Data.signals }}
+      <p class="meta">Last updated: <strong>{{ .updated_at }}</strong> • Tracking {{ len .leads }} signals</p>
+    {{ end }}
+  </header>
+
+  <main>
+    {{ with .Site.Data.signals.leads }}
+    <table>
+      <thead>
+        <tr>
+          <th>Score</th>
+          <th>Target / Project</th>
+          <th>Signal Type</th>
+          <th>Context & Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range . }}
+        <tr>
+          <td class="score">{{ .score }}</td>
+          <td>
+            <strong><a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a></strong>
+            {{ if .domain }}<br><small>{{ .domain }}</small>{{ end }}
+          </td>
+          <td><span class="badge">{{ .signal_type }}</span></td>
+          <td>{{ .detail }}</td>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+    {{ else }}
+      <p>No signals ingested yet. Run the scanner script to populate <code>data/signals.json</code>.</p>
+    {{ end }}
+  </main>
+</body>
+</html>

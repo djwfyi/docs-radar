@@ -1,0 +1,117 @@
+{
+  "updated_at": "2026-11-23 18:02 UTC",
+  "leads": [
+    {
+      "name": "ARPAHLS/skillware",
+      "url": "https://github.com/ARPAHLS/skillware/issues/512",
+      "domain": "skillware.site",
+      "signal_type": "DOC_ISSUE_OPEN",
+      "detail": "(\u2b50 194 \u2022 Org Repo \u2022 Site: skillware.site) Issue: [Skill Upgrade]: `data_engineering/synthetic_generator` v1.0.0 \u2014 Model-agnostic synthetic dataset engine",
+      "score": 75
+    },
+    {
+      "name": "ObjectVision/GeoDMS",
+      "url": "https://github.com/ObjectVision/GeoDMS/issues/1386",
+      "domain": "geodms.nl",
+      "signal_type": "DOC_ISSUE_OPEN",
+      "detail": "(\u2b50 15 \u2022 Org Repo \u2022 Site: geodms.nl) Issue: The repository has no contribution policy or code of conduct, and its two licence files leave the licence of GeoDMS ambiguous",
+      "score": 60
+    },
+    {
+      "name": "yakew7/DesignHub",
+      "url": "https://github.com/yakew7/DesignHub/issues/612",
+      "domain": "designhub-six.vercel.app",
+      "signal_type": "DOC_ISSUE_OPEN",
+      "detail": "(\u2b50 57 \u2022 Site: designhub-six.vercel.app) Issue: Security: remove unsafe-inline from script-src with hashes for Next.js's inline scripts",
+      "score": 50
+    },
+    {
+      "name": "SatyamPandey-07/WorkSphere",
+      "url": "https://github.com/SatyamPandey-07/WorkSphere/issues/9750",
+      "domain": "work-sphere-one.vercel.app",
+      "signal_type": "DOC_ISSUE_OPEN",
+      "detail": "(\u2b50 48 \u2022 Site: work-sphere-one.vercel.app) Issue: docs(wifi): author crowdsourced WiFi speed test sampling protocol and privacy guidelines",
+      "score": 50
+    },
+    {
+      "name": "SatyamPandey-07/WorkSphere",
+      "url": "https://github.com/SatyamPandey-07/WorkSphere/issues/9745",
+      "domain": "work-sphere-one.vercel.app",
+      "signal_type": "DOC_ISSUE_OPEN",
+      "detail": "(\u2b50 48 \u2022 Site: work-sphere-one.vercel.app) Issue: docs(api): document rate limiting policies and Upstash Redis sliding window architecture",
+      "score": 50
+    },
+    {
+      "name": "NVIDIA/cudaq-pulse",
+      "url": "https://github.com/NVIDIA/cudaq-pulse/issues/197",
+      "domain": "",
+      "signal_type": "DOC_ISSUE_OPEN",
+      "detail": "(\u2b50 17 \u2022 Org Repo) Issue: Give the Kernel, Compilation and Operations API pages an intro",
+      "score": 45
+    },
+    {
+      "name": "NVIDIA/cudaq-pulse",
+      "url": "https://github.com/NVIDIA/cudaq-pulse/issues/196",
+      "domain": "",
+      "signal_type": "DOC_ISSUE_OPEN",
+      "detail": "(\u2b50 17 \u2022 Org Repo) Issue: List the doctor's options in Getting Started",
+      "score": 45
+    },
+    {
+      "name": "NVIDIA/cudaq-pulse",
+      "url": "https://github.com/NVIDIA/cudaq-pulse/issues/194",
+      "domain": "",
+      "signal_type": "DOC_ISSUE_OPEN",
+      "detail": "(\u2b50 17 \u2022 Org Repo) Issue: Add an Example to the backend registry function docstrings",
+      "score": 45
+    },
+    {
+      "name": "NVIDIA/cudaq-pulse",
+      "url": "https://github.com/NVIDIA/cudaq-pulse/issues/193",
+      "domain": "",
+      "signal_type": "DOC_ISSUE_OPEN",
+      "detail": "(\u2b50 17 \u2022 Org Repo) Issue: Explain names with an argument in available_quantum_systems()",
+      "score": 45
+    },
+    {
+      "name": "RailCall \u2013 Local Mac agent execution with zero API markup",
+      "url": "https://railcall.ai/",
+      "domain": "railcall.ai",
+      "signal_type": "SHOW_HN_DEVTOOL",
+      "detail": "Show HN: RailCall \u2013 Local Mac agent execution with zero API markup (Live docs at https://railcall.ai/docs)",
+      "score": 45
+    },
+    {
+      "name": "Minymaton \u2013 SQLite event based no polling token waste MCP message",
+      "url": "https://github.com/immutlex-dev/minymaton",
+      "domain": "github.com",
+      "signal_type": "SHOW_HN_DEVTOOL",
+      "detail": "Show HN: Minymaton \u2013 SQLite event based no polling token waste MCP message bus",
+      "score": 25
+    },
+    {
+      "name": "MCPfolio \u2013 see which AI prompts recommend your MCP server",
+      "url": "https://www.mcpfolio.com",
+      "domain": "mcpfolio.com",
+      "signal_type": "SHOW_HN_DEVTOOL",
+      "detail": "Show HN: MCPfolio \u2013 see which AI prompts recommend your MCP server",
+      "score": 25
+    },
+    {
+      "name": "Second Brain \u2013 One Memory Shared by Claude, ChatGPT and Cursor vi",
+      "url": "https://github.com/bhushan/getsecondbrain.io",
+      "domain": "github.com",
+      "signal_type": "SHOW_HN_DEVTOOL",
+      "detail": "Show HN: Second Brain \u2013 One Memory Shared by Claude, ChatGPT and Cursor via MCP",
+      "score": 25
+    },
+    {
+      "name": "I built an MCP server that gives AI agents a reliable clock",
+      "url": "https://agentclock.andalabx.com/",
+      "domain": "agentclock.andalabx.com",
+      "signal_type": "SHOW_HN_DEVTOOL",
+      "detail": "Show HN: I built an MCP server that gives AI agents a reliable clock",
+      "score": 25
+    }
+  ]
+}
