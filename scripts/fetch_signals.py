@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Docs Opportunity Scout — Hugo Data Pipeline (scripts/fetch_signals.py)
-Writes normalized leads with historical tracking (is_new, score_delta, first_seen),
+Writes normalized leads with persistent historical tracking (data/seen.json),
+encounter counts (seen_count), star velocity (star_delta), cross-signal deduplication,
 docs platform classification, and score breakdown tooltips to data/signals.json.
 """
 
@@ -31,7 +32,7 @@ except ImportError:
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "").strip()
 HEADERS = {
-    "User-Agent": "DocsOpportunityScout/2.3",
+    "User-Agent": "DocsOpportunityScout/3.1",
     "Accept": "application/vnd.github+json",
 }
 if GITHUB_TOKEN:
@@ -150,6 +151,7 @@ def extract_root_domain(raw_url: str) -> Optional[str]:
         "github.com", "gitlab.com", "bitbucket.org", "npmjs.com",
         "pypi.org", "crates.io", "x.com", "twitter.com", "linkedin.com",
         "youtube.com", "ycombinator.com", "discord.gg", "discord.com",
+        "vercel.app", "netlify.app", "github.io", "pages.dev",
     )
     if any(host == d or host.endswith("." + d) for d in ignored_roots):
         return None
@@ -164,6 +166,24 @@ def extract_root_domain(raw_url: str) -> Optional[str]:
                 changed = True
 
     return host
+
+
+def extract_github_repo_from_url(raw_url: str) -> Optional[str]:
+    """Extract 'owner/repo' if a URL points directly to a GitHub repository."""
+    if not raw_url:
+        return None
+    try:
+        parsed = urlparse(raw_url)
+        if parsed.netloc.lower() not in ("github.com", "www.github.com"):
+            return None
+        parts = [p for p in parsed.path.strip("/").split("/") if p]
+        if len(parts) >= 2:
+            owner, repo = parts[0].lower(), parts[1].lower()
+            if owner not in ("topics", "explore", "marketplace", "orgs", "users", "search"):
+                return f"{owner}/{repo}"
+    except Exception:
+        pass
+    return None
 
 
 def resolve_cname(hostname: str) -> Optional[str]:
@@ -227,7 +247,6 @@ def probe_docs_infrastructure(root_domain: Optional[str]) -> Tuple[str, str, boo
                     True,
                 )
 
-        # CNAME points to a generic host/CDN; inspect HTML on that subdomain
         try:
             get_resp = requests.get(f"https://{sub}", timeout=3, headers={"User-Agent": HEADERS["User-Agent"]})
             if get_resp.status_code == 200:
@@ -277,8 +296,19 @@ def probe_github_repo_platform(full_name: str) -> Optional[str]:
         return None
 
 
+def fetch_github_repo_meta(full_name: str) -> Optional[dict]:
+    """Fetch repository metadata dict from GitHub API."""
+    try:
+        r = requests.get(f"https://api.github.com/repos/{full_name}", headers=HEADERS, timeout=6)
+        if r.status_code == 200:
+            return r.json()
+    except Exception:
+        pass
+    return None
+
+
 # ---------------------------------------------------------------------------
-# GitHub Filtering & Collectors
+# GitHub Filtering & Traction Gates
 # ---------------------------------------------------------------------------
 
 def is_early_stage_repo(repo_data: dict) -> bool:
@@ -307,6 +337,19 @@ def is_early_stage_repo(repo_data: dict) -> bool:
     return True
 
 
+def passes_traction_gate(repo_data: dict, min_user_stars: int = 15, min_org_stars: int = 5) -> bool:
+    """
+    Post-fetch traction gate to eliminate 0-star personal scratchpads:
+    - Personal user repos require >= min_user_stars (default 15).
+    - Organization repos require >= min_org_stars (default 5).
+    """
+    stars = repo_data.get("stargazers_count", 0)
+    owner_type = repo_data.get("owner", {}).get("type", "User")
+    if owner_type == "Organization":
+        return stars >= min_org_stars
+    return stars >= min_user_stars
+
+
 def check_org_size_ok(owner_login: str, cache: dict) -> bool:
     """Exclude organizations with > 60 public repositories (mature enterprises)."""
     key = owner_login.lower()
@@ -329,6 +372,10 @@ def check_org_size_ok(owner_login: str, cache: dict) -> bool:
     cache[key] = True
     return True
 
+
+# ---------------------------------------------------------------------------
+# Collectors (Rebalanced Scoring: Base + Traction + Docs Opportunity)
+# ---------------------------------------------------------------------------
 
 def collect_github_docs_configs(days_back: int = 14) -> List[dict]:
     """Search GitHub code for newly added documentation framework configs."""
@@ -370,40 +417,49 @@ def collect_github_docs_configs(days_back: int = 14) -> List[dict]:
                 continue
             seen_repos.add(full_name)
 
-            try:
-                r_meta = requests.get(f"https://api.github.com/repos/{full_name}", headers=HEADERS, timeout=6)
-                if r_meta.status_code != 200:
-                    continue
-                meta = r_meta.json()
-            except Exception:
+            meta = fetch_github_repo_meta(full_name)
+            if not meta or not is_early_stage_repo(meta):
                 continue
-
-            stars = meta.get("stargazers_count", 0)
-            if stars < 10 or not is_early_stage_repo(meta):
+            if not passes_traction_gate(meta, min_user_stars=25, min_org_stars=10):
                 continue
 
             owner_login = meta.get("owner", {}).get("login", "")
             if not check_org_size_ok(owner_login, org_cache):
                 continue
 
+            stars = meta.get("stargazers_count", 0)
             file_path = item.get("path", "")
             homepage = meta.get("homepage") or ""
             root_domain = extract_root_domain(homepage)
 
             parts = []
             if tier == "core":
-                score = 95
-                parts.append(f"95 base ({default_platform} config)")
+                score = 50
+                parts.append(f"50 base ({default_platform} config)")
+                if stars >= 1000:
+                    score += 25
+                    parts.append(f"+25 high traction ({stars}★)")
+                elif stars >= 100:
+                    score += 20
+                    parts.append(f"+20 traction ({stars}★)")
+                elif stars >= 25:
+                    score += 10
+                    parts.append(f"+10 early traction ({stars}★)")
+                if root_domain:
+                    score += 15
+                    parts.append("+15 custom domain")
             else:
-                score = 65
-                parts.append(f"65 base ({default_platform} config)")
-
-            if root_domain:
-                score += 10
-                parts.append("+10 custom domain")
-            if 25 <= stars <= 2500:
-                score += 5
-                parts.append("+5 early traction (25–2.5k★)")
+                score = 35
+                parts.append(f"35 base ({default_platform} config)")
+                if stars >= 250:
+                    score += 20
+                    parts.append(f"+20 traction ({stars}★)")
+                elif stars >= 25:
+                    score += 10
+                    parts.append(f"+10 early traction ({stars}★)")
+                if root_domain:
+                    score += 15
+                    parts.append("+15 custom domain")
 
             desc = (meta.get("description") or "").strip()
             detail = f"Detected `{file_path}` ({stars}★)."
@@ -413,10 +469,13 @@ def collect_github_docs_configs(days_back: int = 14) -> List[dict]:
             leads.append({
                 "name": full_name,
                 "domain": root_domain or "",
+                "repo": full_name.lower(),
+                "stars": stars,
                 "url": meta.get("html_url", f"https://github.com/{full_name}"),
                 "signal_type": "DOCS_CONFIG_ADDED",
+                "category": "tooling_trend",
                 "platform": default_platform,
-                "score": min(score, 120),
+                "score": min(score, 115),
                 "score_breakdown": " · ".join(parts),
                 "detail": detail[:260],
             })
@@ -426,16 +485,20 @@ def collect_github_docs_configs(days_back: int = 14) -> List[dict]:
 
 
 def collect_github_doc_issues(days_back: int = 14) -> List[dict]:
-    """Find open issues explicitly asking for docs help or flagging doc drift."""
+    """
+    Find open issues explicitly asking for docs help or flagging doc drift.
+    Note: GitHub /search/issues ignores `stars:`, so we filter by labels / title
+    at query time and enforce `passes_traction_gate()` after fetching repo metadata.
+    """
     leads: List[dict] = []
     seen_repos = set()
     org_cache: Dict[str, bool] = {}
     since_date = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=days_back)).strftime("%Y-%m-%d")
 
+    bot_exclusions = "-author:app/dependabot -author:app/renovate -author:app/github-actions"
     search_queries = [
-        f'is:issue is:open label:documentation created:>{since_date} stars:25..3000',
-        f'is:issue is:open "documentation" "drift" created:>{since_date} stars:20..5000',
-        f'is:issue is:open "need docs" OR "missing docs" created:>{since_date} stars:20..3000',
+        f'is:issue is:open label:documentation,docs created:>{since_date} {bot_exclusions}',
+        f'is:issue is:open ("missing docs" OR "add documentation" OR "update docs" OR "doc drift" OR "getting started guide") in:title created:>{since_date} {bot_exclusions}',
     ]
 
     for q in search_queries:
@@ -443,7 +506,7 @@ def collect_github_doc_issues(days_back: int = 14) -> List[dict]:
             resp = requests.get(
                 "https://api.github.com/search/issues",
                 headers=HEADERS,
-                params={"q": q, "sort": "created", "order": "desc", "per_page": 25},
+                params={"q": q, "sort": "created", "order": "desc", "per_page": 40},
                 timeout=10,
             )
             if resp.status_code != 200:
@@ -464,19 +527,20 @@ def collect_github_doc_issues(days_back: int = 14) -> List[dict]:
                 continue
             seen_repos.add(full_name)
 
-            try:
-                r_meta = requests.get(repo_url, headers=HEADERS, timeout=6)
-                if r_meta.status_code != 200:
-                    continue
-                meta = r_meta.json()
-            except Exception:
+            meta = fetch_github_repo_meta(full_name)
+            if not meta or not is_early_stage_repo(meta):
                 continue
-
-            if not is_early_stage_repo(meta):
+            if not passes_traction_gate(meta, min_user_stars=15, min_org_stars=5):
                 continue
 
             owner_login = meta.get("owner", {}).get("login", "")
             if not check_org_size_ok(owner_login, org_cache):
+                continue
+
+            stars = meta.get("stargazers_count", 0)
+            issue_author = (issue.get("user") or {}).get("login", "").lower()
+            # Drop self-filed TODO issues on low-traction personal repos
+            if issue_author == owner_login.lower() and stars < 25:
                 continue
 
             root_domain = extract_root_domain(meta.get("homepage") or "")
@@ -493,24 +557,39 @@ def collect_github_doc_issues(days_back: int = 14) -> List[dict]:
                         platform = repo_plat
                         has_docs = True
 
-            score = 90
-            parts = ["90 base (open docs/drift issue)"]
-            if root_domain:
-                score += 5
-                parts.append("+5 custom domain")
-            if has_docs:
-                score += 5
-                parts.append(f"+5 active docs ({platform})")
+            # Rebalanced Issue Scoring: 40 base + traction + contributor/docs opportunity
+            score = 40
+            parts = ["40 base (open docs/drift issue)"]
 
-            stars = meta.get("stargazers_count", 0)
+            if stars >= 1000:
+                score += 30
+                parts.append(f"+30 high traction ({stars}★)")
+            elif stars >= 100:
+                score += 20
+                parts.append(f"+20 traction ({stars}★)")
+            elif stars >= 15:
+                score += 10
+                parts.append(f"+10 early traction ({stars}★)")
+
+            label_names = {lbl.get("name", "").lower() for lbl in issue.get("labels", []) if isinstance(lbl, dict)}
+            if label_names & {"help wanted", "good first issue", "contributions welcome"}:
+                score += 15
+                parts.append("+15 help wanted")
+
+            if has_docs or root_domain:
+                score += 10
+                parts.append(f"+10 live site / docs ({platform})")
 
             leads.append({
                 "name": full_name,
                 "domain": root_domain or "",
+                "repo": full_name.lower(),
+                "stars": stars,
                 "url": issue.get("html_url", ""),
                 "signal_type": "DOC_ISSUE_OPEN",
+                "category": "outreach_lead",
                 "platform": platform,
-                "score": score,
+                "score": min(score, 115),
                 "score_breakdown": " · ".join(parts),
                 "detail": f"Open issue ({stars}★): {title}",
             })
@@ -550,29 +629,52 @@ def collect_show_hn_devtools(days_back: int = 14) -> List[dict]:
         if not story_url or not dev_keywords.search(title):
             continue
 
+        repo_slug = extract_github_repo_from_url(story_url)
         root_domain = extract_root_domain(story_url)
+        stars = 0
+
+        if repo_slug:
+            meta = fetch_github_repo_meta(repo_slug)
+            if meta:
+                stars = meta.get("stargazers_count", 0)
+                if not root_domain:
+                    root_domain = extract_root_domain(meta.get("homepage") or "")
+
         platform, evidence, has_docs = probe_docs_infrastructure(root_domain)
 
-        if has_docs:
-            score = 85
-            parts = [f"85 base (Show HN + live {platform} docs)"]
-        else:
-            score = 60
-            parts = ["60 base (Show HN launch, no docs yet)"]
+        # Rebalanced Show HN Scoring: 45 base + HN traction + docs opportunity
+        score = 45
+        parts = ["45 base (Show HN devtool)"]
 
         points = hit.get("points", 0)
-        if points >= 75:
-            score += 5
-            parts.append(f"+5 HN traction ({points} pts)")
+        if points >= 200:
+            score += 35
+            parts.append(f"+35 viral HN traction ({points} pts)")
+        elif points >= 75:
+            score += 25
+            parts.append(f"+25 strong HN traction ({points} pts)")
+        elif points >= 25:
+            score += 15
+            parts.append(f"+15 HN traction ({points} pts)")
+
+        if not has_docs:
+            score += 20
+            parts.append("+20 greenfield docs opportunity")
+        else:
+            score += 15
+            parts.append(f"+15 active {platform} docs")
 
         clean_name = title.replace("Show HN:", "").strip()
         leads.append({
             "name": clean_name,
             "domain": root_domain or "",
+            "repo": repo_slug or "",
+            "stars": stars,
             "url": story_url,
             "signal_type": "SHOW_HN_DEVTOOL",
+            "category": "outreach_lead",
             "platform": platform,
-            "score": score,
+            "score": min(score, 115),
             "score_breakdown": " · ".join(parts),
             "detail": f"Show HN ({points} pts) — {evidence}",
         })
@@ -581,40 +683,72 @@ def collect_show_hn_devtools(days_back: int = 14) -> List[dict]:
 
 
 def collect_yc_companies(limit: int = 150) -> List[dict]:
-    """Fetch recent Y Combinator companies from the public YC OSS directory."""
+    """Fetch recent Y Combinator companies from per-batch yc-oss API endpoints."""
     leads: List[dict] = []
-    try:
-        resp = requests.get("https://yc-oss.github.io/api/companies/all.json", timeout=15)
-        if resp.status_code != 200:
-            return leads
-        companies = resp.json()
-    except Exception:
-        return leads
 
-    recent_batches = {"W24", "S24", "F24", "W25", "S25", "F25", "W26", "S26"}
-    filtered = [
-        c for c in companies
-        if c.get("batch") in recent_batches
-        and any(
-            tag in (c.get("industry", "") + " " + " ".join(c.get("tags", []))).lower()
-            for tag in ("developer", "b2b", "infrastructure", "ai", "api", "cloud", "security", "data")
-        )
-    ][:limit]
+    # Query the most recent YC batches directly instead of downloading all ~5,700 companies
+    batch_endpoints = [
+        ("Fall 2026", "https://yc-oss.github.io/api/batches/fall-2026.json"),
+        ("Summer 2026", "https://yc-oss.github.io/api/batches/summer-2026.json"),
+        ("Spring 2026", "https://yc-oss.github.io/api/batches/spring-2026.json"),
+        ("Winter 2026", "https://yc-oss.github.io/api/batches/winter-2026.json"),
+        ("Fall 2025", "https://yc-oss.github.io/api/batches/fall-2025.json"),
+        ("Summer 2025", "https://yc-oss.github.io/api/batches/summer-2025.json"),
+    ]
 
-    for comp in filtered:
+    target_keywords = (
+        "developer", "b2b", "infrastructure", "ai", "api",
+        "cloud", "security", "data", "open source", "devtools",
+    )
+
+    companies: List[dict] = []
+    for batch_label, url in batch_endpoints:
+        try:
+            resp = requests.get(url, timeout=12, headers={"User-Agent": HEADERS["User-Agent"]})
+            if resp.status_code != 200:
+                print(f"[!] YC batch fetch failed ({batch_label}): HTTP {resp.status_code}", file=sys.stderr)
+                continue
+            batch_items = resp.json()
+            if isinstance(batch_items, list):
+                for item in batch_items:
+                    item.setdefault("_batch_label", batch_label)
+                companies.extend(batch_items)
+        except Exception as exc:
+            print(f"[!] YC batch fetch error ({batch_label}): {exc}", file=sys.stderr)
+
+    filtered = []
+    for c in companies:
+        if c.get("status") not in (None, "", "Active"):
+            continue
+        industry = str(c.get("industry") or "")
+        subindustry = str(c.get("subindustry") or "")
+        tags = " ".join(str(t) for t in (c.get("tags") or []))
+        one_liner = str(c.get("one_liner") or "")
+        searchable = f"{industry} {subindustry} {tags} {one_liner}".lower()
+
+        if any(kw in searchable for kw in target_keywords):
+            filtered.append(c)
+
+    print(f"    -> Matched {len(filtered)} relevant YC companies (probing top {min(len(filtered), limit)})")
+
+    for comp in filtered[:limit]:
         name = comp.get("name", "Unknown")
         website = comp.get("website") or ""
-        batch = comp.get("batch", "")
+        batch = comp.get("batch") or comp.get("_batch_label") or ""
         one_liner = (comp.get("one_liner") or "").strip()
         root_domain = extract_root_domain(website)
 
         platform, evidence, has_docs = probe_docs_infrastructure(root_domain)
-        if has_docs:
-            score = 75
-            breakdown = f"75 base (YC {batch} + active {platform} docs)"
-        else:
-            score = 35
-            breakdown = f"35 base (YC {batch} greenfield — no docs site yet)"
+
+        score = 50
+        parts = [f"50 base (YC {batch})"]
+
+        if not has_docs and root_domain:
+            score += 20
+            parts.append("+20 greenfield docs opportunity")
+        elif has_docs:
+            score += 15
+            parts.append(f"+15 active {platform} docs")
 
         detail = f"YC {batch}: {one_liner}" if one_liner else f"YC {batch}"
         detail += f" ({evidence})"
@@ -622,11 +756,14 @@ def collect_yc_companies(limit: int = 150) -> List[dict]:
         leads.append({
             "name": f"{name} ({batch})",
             "domain": root_domain or "",
+            "repo": "",
+            "stars": 0,
             "url": website or f"https://www.ycombinator.com/companies/{comp.get('slug', '')}",
             "signal_type": "YC_BATCH",
+            "category": "outreach_lead",
             "platform": platform,
-            "score": score,
-            "score_breakdown": breakdown,
+            "score": min(score, 115),
+            "score_breakdown": " · ".join(parts),
             "detail": detail,
         })
 
@@ -634,60 +771,204 @@ def collect_yc_companies(limit: int = 150) -> List[dict]:
 
 
 # ---------------------------------------------------------------------------
-# State Persistence & Merge (Preserves first_seen, is_new, score_delta)
+# State Persistence, seen.json Tracking & Persistence Scoring
 # ---------------------------------------------------------------------------
 
-def merge_with_existing_state(new_leads: List[dict], data_path: Path) -> dict:
-    today_str = datetime.date.today().isoformat()
-    now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M UTC")
+def canonical_lead_key(lead: dict) -> str:
+    """Group multiple signals for the same startup/project by domain, repo, or URL."""
+    domain = (lead.get("domain") or "").strip().lower()
+    if domain:
+        return f"domain:{domain}"
+    repo = (lead.get("repo") or "").strip().lower()
+    if repo:
+        return f"repo:{repo}"
+    url = (lead.get("url") or lead.get("name") or "").rstrip("/").lower()
+    return f"url:{url}"
 
-    previous_by_key: Dict[str, dict] = {}
-    if data_path.exists():
+
+def load_seen_state(seen_path: Path, fallback_data_path: Path) -> Dict[str, dict]:
+    """
+    Load historical encounter state from data/seen.json.
+    Falls back to bootstrapping from data/signals.json on first migration.
+    """
+    if seen_path.exists():
         try:
-            existing = json.loads(data_path.read_text(encoding="utf-8"))
-            for item in existing.get("leads", []):
-                k = (item.get("url") or item.get("name") or "").rstrip("/").lower()
-                if k:
-                    previous_by_key[k] = item
+            raw = json.loads(seen_path.read_text(encoding="utf-8"))
+            if isinstance(raw, dict) and "items" in raw:
+                return raw["items"]
+            if isinstance(raw, dict):
+                return raw
         except Exception:
             pass
 
+    bootstrapped: Dict[str, dict] = {}
+    if fallback_data_path.exists():
+        try:
+            existing = json.loads(fallback_data_path.read_text(encoding="utf-8"))
+            for item in existing.get("leads", []):
+                k = canonical_lead_key(item)
+                if k:
+                    bootstrapped[k] = {
+                        "name": item.get("name", ""),
+                        "url": item.get("url", ""),
+                        "first_seen": item.get("first_seen") or datetime.date.today().isoformat(),
+                        "last_seen": item.get("first_seen") or datetime.date.today().isoformat(),
+                        "seen_count": int(item.get("seen_count") or 1),
+                        "first_seen_stars": int(item.get("first_seen_stars") or item.get("stars") or 0),
+                        "last_stars": int(item.get("stars") or 0),
+                        "last_score": int(item.get("score") or 0),
+                        "platform": item.get("platform") or "Greenfield / None",
+                        "signal_types": [item.get("signal_type")] if item.get("signal_type") else [],
+                    }
+        except Exception:
+            pass
+    return bootstrapped
+
+
+def save_seen_state(seen_items: Dict[str, dict], seen_path: Path, now_str: str) -> None:
+    """Persist cumulative encounter history to data/seen.json."""
+    seen_path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "updated_at": now_str,
+        "total_tracked": len(seen_items),
+        "items": seen_items,
+    }
+    seen_path.write_text(json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def merge_with_existing_state(
+    new_leads: List[dict],
+    data_path: Path,
+    seen_path: Path,
+) -> dict:
+    today_str = datetime.date.today().isoformat()
+    now_str = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
+    seen_items = load_seen_state(seen_path, fallback_data_path=data_path)
+
     deduped: Dict[str, dict] = {}
+    signal_types_by_key: Dict[str, set] = {}
+
     for lead in new_leads:
-        k = (lead.get("url") or lead.get("name") or "").rstrip("/").lower()
-        if not k:
+        k = canonical_lead_key(lead)
+        if not k or k == "url:":
             continue
-        if k not in deduped or lead["score"] > deduped[k]["score"]:
+
+        signal_types_by_key.setdefault(k, set()).add(lead.get("signal_type", ""))
+
+        if k not in deduped:
             deduped[k] = lead
+        else:
+            existing_lead = deduped[k]
+            if lead["score"] > existing_lead["score"]:
+                primary, secondary = lead, existing_lead
+            else:
+                primary, secondary = existing_lead, lead
+
+            if primary.get("platform") in ("", "Greenfield / None", "Custom / Other") and secondary.get("platform") not in ("", "Greenfield / None"):
+                primary["platform"] = secondary["platform"]
+            if secondary.get("stars", 0) > primary.get("stars", 0):
+                primary["stars"] = secondary["stars"]
+            if not primary.get("repo") and secondary.get("repo"):
+                primary["repo"] = secondary["repo"]
+
+            deduped[k] = primary
 
     merged_leads: List[dict] = []
     new_count = 0
 
     for k, lead in deduped.items():
+        distinct_signals = {s for s in signal_types_by_key.get(k, set()) if s}
+        if len(distinct_signals) > 1:
+            lead["score"] = min(115, lead["score"] + 10)
+            lead["score_breakdown"] += f" · +10 multi-signal ({', '.join(sorted(distinct_signals))})"
+
         if lead["platform"] == "Greenfield / None":
             inferred = infer_platform_from_text(lead.get("detail", ""))
             if inferred:
                 lead["platform"] = inferred
 
-        prev = previous_by_key.get(k)
+        prev = seen_items.get(k)
+        current_stars = int(lead.get("stars") or 0)
+
         if prev is None:
+            seen_count = 1
+            first_seen = today_str
+            baseline_stars = current_stars
+            star_delta = 0
             lead["is_new"] = True
-            lead["score_delta"] = 0
-            lead["first_seen"] = today_str
             new_count += 1
         else:
+            seen_count = int(prev.get("seen_count") or 1) + 1
+            first_seen = prev.get("first_seen") or today_str
+            baseline_stars = int(prev.get("first_seen_stars") or prev.get("last_stars") or current_stars)
+            star_delta = max(0, current_stars - baseline_stars) if current_stars > 0 else 0
             lead["is_new"] = False
-            lead["score_delta"] = max(0, lead["score"] - int(prev.get("score", lead["score"])))
-            lead["first_seen"] = prev.get("first_seen") or today_str
+
             if lead["platform"] == "Greenfield / None" and prev.get("platform") not in (None, "", "Greenfield / None"):
                 lead["platform"] = prev["platform"]
+
+            # Merge historical signal types so multi-run cross-signals are remembered
+            historical_signals = set(prev.get("signal_types") or [])
+            combined_signals = distinct_signals | historical_signals
+            if len(combined_signals) > len(distinct_signals) and len(combined_signals) > 1:
+                lead["score"] = min(115, lead["score"] + 10)
+                lead["score_breakdown"] += f" · +10 historical multi-signal ({', '.join(sorted(combined_signals))})"
+
+        # Apply encounter-count influence to score
+        if seen_count >= 10 and star_delta == 0:
+            lead["score"] = max(20, lead["score"] - 10)
+            lead["score_breakdown"] += f" · -10 stale ({seen_count}x seen, 0★ gained)"
+        elif seen_count >= 5:
+            lead["score"] = min(115, lead["score"] + 10)
+            lead["score_breakdown"] += f" · +10 persistent ({seen_count}x seen)"
+        elif seen_count >= 3:
+            lead["score"] = min(115, lead["score"] + 5)
+            lead["score_breakdown"] += f" · +5 recurring ({seen_count}x seen)"
+
+        # Star velocity bonus when a repo is actively gaining stars across runs
+        if star_delta >= 25:
+            lead["score"] = min(115, lead["score"] + 10)
+            lead["score_breakdown"] += f" · +10 fast star growth (+{star_delta}★)"
+        elif star_delta >= 10:
+            lead["score"] = min(115, lead["score"] + 5)
+            lead["score_breakdown"] += f" · +5 rising stars (+{star_delta}★)"
+
+        prev_score = int(prev.get("last_score", lead["score"])) if prev else lead["score"]
+        lead["score_delta"] = max(0, lead["score"] - prev_score) if prev else 0
+        lead["first_seen"] = first_seen
+        lead["last_seen"] = today_str
+        lead["seen_count"] = seen_count
+        lead["first_seen_stars"] = baseline_stars
+        lead["star_delta"] = star_delta
+
+        # Update cumulative seen.json record
+        all_recorded_signals = sorted(
+            distinct_signals | set((prev or {}).get("signal_types") or [])
+        )
+        seen_items[k] = {
+            "name": lead.get("name", ""),
+            "url": lead.get("url", ""),
+            "first_seen": first_seen,
+            "last_seen": today_str,
+            "seen_count": seen_count,
+            "first_seen_stars": baseline_stars,
+            "last_stars": current_stars,
+            "last_score": lead["score"],
+            "platform": lead.get("platform", "Greenfield / None"),
+            "signal_types": all_recorded_signals,
+        }
+
         merged_leads.append(lead)
 
-    merged_leads.sort(key=lambda x: (x["score"], x["is_new"]), reverse=True)
+    save_seen_state(seen_items, seen_path, now_str)
+
+    merged_leads.sort(key=lambda x: (x["score"], x.get("star_delta", 0), x["is_new"]), reverse=True)
 
     return {
         "updated_at": now_str,
         "new_count": new_count,
+        "total_seen_history": len(seen_items),
         "leads": merged_leads,
     }
 
@@ -701,6 +982,7 @@ def main() -> None:
     parser.add_argument("--days", type=int, default=14, help="Lookback window in days (default: 14)")
     parser.add_argument("--yc-limit", type=int, default=150, help="Max recent YC companies to probe (default: 150)")
     parser.add_argument("--out", default="data/signals.json", help="Output JSON path (default: data/signals.json)")
+    parser.add_argument("--seen", default="data/seen.json", help="Persistent seen state JSON path (default: data/seen.json)")
     args = parser.parse_args()
 
     if not GITHUB_TOKEN:
@@ -721,11 +1003,12 @@ def main() -> None:
     collected.extend(collect_yc_companies(limit=args.yc_limit))
 
     out_path = Path(args.out)
+    seen_path = Path(args.seen)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    payload = merge_with_existing_state(collected, out_path)
+    payload = merge_with_existing_state(collected, out_path, seen_path)
 
     out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-    print(f"[✓] Saved {len(payload['leads'])} leads ({payload['new_count']} new) to {out_path}")
+    print(f"[✓] Saved {len(payload['leads'])} leads ({payload['new_count']} new; {payload['total_seen_history']} total seen) to {out_path}")
 
 
 if __name__ == "__main__":

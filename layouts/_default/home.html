@@ -50,12 +50,12 @@
     <details class="scoring-guide">
       <summary>How scores are calculated</summary>
       <div class="scoring-grid">
-        <div class="scoring-item"><strong>95–110 · Core Docs Config:</strong> Repo recently added Mintlify, Docusaurus, Astro/Starlight, VitePress, Fumadocs, MkDocs, Hugo, or Antora (+10 custom domain, +5 early traction 25–2.5k★).</div>
-        <div class="scoring-item"><strong>90–100 · Open Docs / Drift Issue:</strong> Active GitHub issue requesting missing docs or flagging doc drift (+5 custom domain, +5 live docs site).</div>
-        <div class="scoring-item"><strong>85–90 · Show HN (Live Docs):</strong> Recent developer-tool launch on HN with an active docs subdomain or <code>/docs</code> route (+5 if ≥75 HN pts).</div>
-        <div class="scoring-item"><strong>75 · YC Batch (Active Docs):</strong> Recent YC company (W24–S26) with a confirmed docs subdomain or <code>/docs</code> endpoint.</div>
-        <div class="scoring-item"><strong>65–80 · AI / Linter Config:</strong> Repo added <code>llms.txt</code> or <code>.vale.ini</code> (+10 domain, +5 traction).</div>
-        <div class="scoring-item"><strong>35–60 · Greenfield / Early:</strong> Show HN launch without docs yet (60) or recent YC startup with no docs detected (35). Hover any score for its exact breakdown.</div>
+        <div class="scoring-item"><strong>80–115 · High-Traction Show HN:</strong> Developer-tool launch on HN (45 base + up to 35 HN traction + 20 greenfield / 15 active docs).</div>
+        <div class="scoring-item"><strong>65–85 · YC Batch Company:</strong> Recent YC startup (W24–S26) in dev/infra/AI (50 base + 20 greenfield or 15 active docs).</div>
+        <div class="scoring-item"><strong>50–100 · Core Docs Config:</strong> Repo (≥25★ or org) added Mintlify, Starlight, Docusaurus, Fumadocs, VitePress, MkDocs, Hugo, or Antora (50 base + up to 25★ traction + 15 domain).</div>
+        <div class="scoring-item"><strong>40–95 · Open Docs / Drift Issue:</strong> Repo (≥15★ or org) with an open docs/drift issue (40 base + up to 30★ traction + 15 help wanted + 10 live docs).</div>
+        <div class="scoring-item"><strong>35–70 · AI / Linter Config:</strong> Repo added <code>llms.txt</code> or <code>.vale.ini</code> (35 base + up to 20★ traction + 15 domain).</div>
+        <div class="scoring-item"><strong>Modifiers:</strong> <code>+10</code> multi-signal match, <code>+5/+10</code> recurring across runs (3×/5× seen) or rising stars, <code>-10</code> stale (10× seen, 0★ gained).</div>
       </div>
     </details>
   </header>
@@ -109,7 +109,13 @@
           <td>
             <strong><a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a></strong>
             {{ if .domain }}<br><small>{{ .domain }}</small>{{ end }}
-            {{ if .first_seen }}<span class="first-seen">First seen: {{ .first_seen }}</span>{{ end }}
+            {{ if .first_seen }}
+            <span class="first-seen">
+              First seen: {{ .first_seen }}
+              {{ if gt (int .seen_count) 1 }} · Seen {{ .seen_count }}×{{ end }}
+              {{ if gt (int .star_delta) 0 }} · +{{ .star_delta }}★{{ end }}
+            </span>
+            {{ end }}
           </td>
           <td>
             {{ if eq $plat "Greenfield / None" }}
